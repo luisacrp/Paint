@@ -82,7 +82,14 @@ def desenharFigura(figura, tag=""):
             canvas.create_rectangle(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
         case "oval":
             canvas.create_oval(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
-
+        case "circulo":
+            dx = coordenadas[2] - coordenadas[0]
+            dy = coordenadas[3] - coordenadas[1]
+            tamanho_lado = max(abs(dx), abs(dy))
+            x_final = coordenadas[0] + (tamanho_lado if dx > 0 else -tamanho_lado)
+            y_final = coordenadas[1] + (tamanho_lado if dy > 0 else -tamanho_lado)
+            
+            canvas.create_oval(coordenadas[0], coordenadas[1], x_final, y_final, **kwargs)
 
 # INTERFACE GRÁFICA
 root = tk.Tk()
@@ -123,7 +130,7 @@ canvas.bind('<ButtonRelease-1>', incluirFigura)
 
 # Menu de Ferramentas
 tk.Label(frame_esquerda, text="Ferramentas", bg="#e0e0e0", font=("Verdana", 10, "bold")).pack(pady=5)
-ferramentas = [("Lápis", "rabisco"), ("Linha", "linha"), ("Retângulo", "retangulo"), ("Oval", "oval")]
+ferramentas = [("Lápis", "rabisco"), ("Linha", "linha"), ("Retângulo", "retangulo"), ("Oval", "oval"), ("Círculo", "circulo")]
 for texto, val in ferramentas:
     tk.Button(frame_esquerda, text=texto, command=lambda v=val: mudarFerramenta(v), width=10).pack(pady=2)
 
