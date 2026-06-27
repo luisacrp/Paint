@@ -5,12 +5,40 @@ import tkinter as tk
 figuras = []
 nova_figura = None
 ferramenta = "rabisco"
+cor_atual_borda = "black"
+cor_atual_preenchimento = "" 
+cor_alvo = "borda"
 
 
 # Função para atualizar a ferramenta selecionada no menu
 def mudarFerramenta(nova_ferramenta):
     global ferramenta
     ferramenta = nova_ferramenta
+
+
+# Função para definir se é a borda ou o preenchimento que mudará de cor
+def setCorAlvo(alvo):
+    global cor_alvo
+    cor_alvo = alvo
+    if alvo == "borda":
+        botao_cor_borda.config(relief="sunken")
+        botao_cor_preenchimento.config(relief="raised")
+    else:
+        botao_cor_borda.config(relief="raised")
+        botao_cor_preenchimento.config(relief="sunken")
+
+# Função para aplicar a cor selecionada na paleta para a variável de borda ou preenchimento
+def selecionarCor(cor):
+    global cor_atual_borda, cor_atual_preenchimento
+    cor_real = "" if cor == "transparente" else cor
+    cor_botao = "white" if cor == "transparente" else cor
+
+    if cor_alvo == "borda":
+        cor_atual_borda = cor_real
+        botao_cor_borda.config(bg=cor_botao)
+    else:
+        cor_atual_preenchimento = cor_real
+        botao_cor_preenchimento.config(bg=cor_botao)
 
 
 # Função que marca o ponto inicial (x, y) quando o usuário clica na tela
@@ -22,11 +50,11 @@ def iniciarFigura(event):
     
     match ferramenta:
         case 'linha':
-            nova_figura = ("linha", [x, y, x, y])
+            nova_figura = ("linha", [x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
         case 'rabisco':
-            nova_figura = ("rabisco", [(x, y)])
+            nova_figura = ("rabisco", [(x, y)], cor_atual_borda, cor_atual_preenchimento)
         case _:
-            nova_figura = (ferramenta, [x, y, x, y])
+            nova_figura = (ferramenta, [x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
 
 
 # Função que atualiza as coordenadas da figura enquanto o mouse é arrastado (preview)
@@ -37,7 +65,7 @@ def atualizarFigura(event):
     x = canvas.canvasx(event.x)
     y = canvas.canvasy(event.y)
     
-    tipo, coordenadas = nova_figura
+    tipo, coordenadas, cor_borda_atual, cor_preenchimento_atual = nova_figura
     
     match tipo:
         case "rabisco":
@@ -66,18 +94,19 @@ def incluirFigura(event):
 
 # Função desenhar na tela baseada no tipo
 def desenharFigura(figura, tag=""):
-    tipo, coordenadas = figura
+    tipo, coordenadas, cor_borda_figura, cor_preenchimento_figura = figura
     tracejado = (4, 2) if tag == "preview" else None
     
     # Cor e estilo opcionais
-    kwargs = {'tags': tag}
+    kwargs = {'outline': cor_borda_figura,'tags': tag}
     if tracejado: kwargs['dash'] = tracejado
+    if cor_preenchimento_figura: kwargs['fill'] = cor_preenchimento_figura
 
     match tipo:
         case "linha":
-            canvas.create_line(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)        
+            canvas.create_line(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], fill=cor_borda_figura, dash=tracejado, tags=tag)        
         case "rabisco":
-            canvas.create_line(coordenadas, **kwargs)
+            canvas.create_line(coordenadas, fill=cor_borda_figura, dash=tracejado, tags=tag)
         case "retangulo":
             canvas.create_rectangle(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
         case "oval":
@@ -93,7 +122,7 @@ def desenharFigura(figura, tag=""):
 
 # INTERFACE GRÁFICA
 root = tk.Tk()
-root.title("Paint - Luísa, Sarah e Sayran")
+root.title("LSS Paint")
 root.geometry("800x600")
 
 
@@ -129,9 +158,34 @@ canvas.bind('<ButtonRelease-1>', incluirFigura)
 
 
 # Menu de Ferramentas
-tk.Label(frame_esquerda, text="Ferramentas", bg="#e0e0e0", font=("Verdana", 10, "bold")).pack(pady=5)
+tk.Label(frame_esquerda, text="FERRAMENTAS", bg="#e0e0e0", font=("Verdana", 8, "bold")).pack(pady=5)
 ferramentas = [("Lápis", "rabisco"), ("Linha", "linha"), ("Retângulo", "retangulo"), ("Oval", "oval"), ("Círculo", "circulo")]
 for texto, val in ferramentas:
     tk.Button(frame_esquerda, text=texto, command=lambda v=val: mudarFerramenta(v), width=10).pack(pady=2)
+
+tk.Label(frame_esquerda, text="\nCORES", bg="#e0e0e0", font=("Verdana", 8, "bold")).pack()
+botao_cor_borda = tk.Button(frame_esquerda, text="Cor da Borda", bg="black", fg="white", relief="sunken", command=lambda: setCorAlvo("borda"))
+botao_cor_borda.pack(pady=2, fill="x", padx=5)
+
+botao_cor_preenchimento = tk.Button(frame_esquerda, text="Cor do Fundo", bg="white", relief="raised", command=lambda: setCorAlvo("preenchimento"))
+botao_cor_preenchimento.pack(pady=2, fill="x", padx=5)
+
+# Menu com Paleta de Cores
+tk.Label(frame_base, text="PALETA:", bg="#e0e0e0", font=("Verdana", 8, "bold")).pack(side="left", padx=5)
+tk.Button(frame_base, text="X", bg="white", width=3, command=lambda: selecionarCor("transparente")).pack(side="left", padx=2, pady=5)
+
+frame_paleta = tk.Frame(frame_base, bg="#e0e0e0")
+frame_paleta.pack(side="left", padx=5)
+
+cores_paleta = [
+    "#000000", "#404040", "#808080", "#FFFFFF", "#FF0000", "#FF3C00", 
+    "#FF5E00", "#FF7B00", "#F5D000", "#9DFF00", "#09FF00", "#008300", 
+    "#00FFC8", "#0077FF", "#001AFF", "#000080", "#7700FF", "#E100FF", 
+    "#FF00D4", "#FF0062", "#7A012A", "#710080", "#5E3201", "#745500"
+]
+
+# Cria os botões da paleta com as 24 cores na linha 0
+for coluna, cor in enumerate(cores_paleta):
+    tk.Button(frame_paleta, bg=cor, width=2, height=1, relief="sunken", bd=1, command=lambda c=cor: selecionarCor(c)).grid(row=0, column=coluna, padx=1, pady=1)
 
 root.mainloop()
