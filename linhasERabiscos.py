@@ -25,6 +25,8 @@ def iniciarFigura(event):
             nova_figura = ("linha", [x, y, x, y])
         case 'rabisco':
             nova_figura = ("rabisco", [(x, y)])
+        case _:
+            nova_figura = (ferramenta, [x, y, x, y])
 
 
 # Função que atualiza as coordenadas da figura enquanto o mouse é arrastado (preview)
@@ -76,6 +78,10 @@ def desenharFigura(figura, tag=""):
             canvas.create_line(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)        
         case "rabisco":
             canvas.create_line(coordenadas, **kwargs)
+        case "retangulo":
+            canvas.create_rectangle(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
+        case "oval":
+            canvas.create_oval(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
 
 
 # INTERFACE GRÁFICA
@@ -117,7 +123,7 @@ canvas.bind('<ButtonRelease-1>', incluirFigura)
 
 # Menu de Ferramentas
 tk.Label(frame_esquerda, text="Ferramentas", bg="#e0e0e0", font=("Verdana", 10, "bold")).pack(pady=5)
-ferramentas = [("Lápis", "rabisco"), ("Linha", "linha")]
+ferramentas = [("Lápis", "rabisco"), ("Linha", "linha"), ("Retângulo", "retangulo"), ("Oval", "oval")]
 for texto, val in ferramentas:
     tk.Button(frame_esquerda, text=texto, command=lambda v=val: mudarFerramenta(v), width=10).pack(pady=2)
 
