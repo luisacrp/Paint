@@ -9,15 +9,15 @@ O desenvolvimento segue uma abordagem de engenharia de software incremental. Atu
 
 ## 👥 Equipe de Desenvolvimento
 * [Luísa Costa Rodrigues Pereira](https://github.com/luisacrp)
-* [Sarah Beatriz Barbosa dos Santos]()
+* [Sarah Beatriz Barbosa dos Santos](https://github.com/sarah-beattx)
 * [Sayran Felix Santana](https://github.com/sayranufs)
 
 ## 🛠️ Funcionalidades Atuais
 * **Ferramentas de Traçado:** Lápis (traçado de forma livre) e Linha (traçado de retas).
 * **Navegabilidade Espacial:** Área de desenho flexível (Canvas) integrada a barras de rolagem (Scrollbars) nos eixos vertical e horizontal, viabilizando a manipulação de áreas de trabalho expandidas e artes de maiores dimensões.
+*  **Formas Geométricas:** Inclusão das funções de renderização para Retângulo, Oval e Círculo.
 
-## 🚀 Trabalhos Futuros (Próximas Etapas)
-* **Primitivas Geométricas:** Inclusão das funções de renderização para Retângulo, Oval e Círculo.
+## 🚀 Próximas Etapas
 * **Sistema de Cores:** Implementação de uma interface com suporte à seleção independente de mapeamento de cores para o contorno (borda) e para a área interna (preenchimento).
 * **Refatoração de Código:** Transição do modelo imperativo para o paradigma de Orientação a Objetos.
 * **Arquitetura de Software:** Divisão lógica e estrutural de diretórios e arquivos em conformidade estrita com o padrão MVC.
