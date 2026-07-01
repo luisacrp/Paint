@@ -51,7 +51,7 @@ def iniciarFigura(event):
     y = canvas.canvasy(event.y)
     
     match ferramenta:
-       case 'linha':
+        case 'linha':
             nova_figura = Linha([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
         case 'rabisco':
             nova_figura = Rabisco([(x, y)], cor_atual_borda, cor_atual_preenchimento)
@@ -96,6 +96,7 @@ def incluirFigura(event):
     for figura in figuras:
         # chama o método da própria classe
         figura.desenhar(canvas, tag="definitivo")
+
 
 
 # INTERFACE GRÁFICA
