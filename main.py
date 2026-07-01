@@ -1,4 +1,6 @@
 import tkinter as tk
+# Modulo das classes criadas
+from figuras import Linha, Rabisco, Retangulo, Oval, Circulo
 
 
 # Variáveis de estado global 
@@ -49,12 +51,16 @@ def iniciarFigura(event):
     y = canvas.canvasy(event.y)
     
     match ferramenta:
-        case 'linha':
-            nova_figura = ("linha", [x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
+       case 'linha':
+            nova_figura = Linha([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
         case 'rabisco':
-            nova_figura = ("rabisco", [(x, y)], cor_atual_borda, cor_atual_preenchimento)
-        case _:
-            nova_figura = (ferramenta, [x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
+            nova_figura = Rabisco([(x, y)], cor_atual_borda, cor_atual_preenchimento)
+        case 'retangulo':
+            nova_figura = Retangulo([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
+        case 'oval':
+            nova_figura = Oval([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
+        case 'circulo':
+            nova_figura = Circulo([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
 
 
 # Função que atualiza as coordenadas da figura enquanto o mouse é arrastado (preview)
@@ -65,18 +71,17 @@ def atualizarFigura(event):
     x = canvas.canvasx(event.x)
     y = canvas.canvasy(event.y)
     
-    tipo, coordenadas, cor_borda_atual, cor_preenchimento_atual = nova_figura
-    
-    match tipo:
-        case "rabisco":
-            coordenadas.append((x, y))
-        case _:
-            coordenadas[2] = x
-            coordenadas[3] = y
+    # Verifica se a figura é um Rabisco (que usa uma lista de várias tuplas)
+    if isinstance(nova_figura, Rabisco):
+        nova_figura.coordenadas.append((x, y))
+    # Para as outras figuras (que usam [x1, y1, x2, y2])
+    else:
+        nova_figura.coordenadas[2] = x
+        nova_figura.coordenadas[3] = y
             
     # atualiza so o preview pra nao apagar o fundo
     canvas.delete("preview")
-    desenharFigura(nova_figura, tag="preview")
+    nova_figura.desenhar(canvas, tag="preview")
 
 
 # Função que salva a figura finalizada na lista global ao soltar o clique do mouse
@@ -89,36 +94,9 @@ def incluirFigura(event):
     canvas.delete("preview")
     canvas.delete("definitivo")
     for figura in figuras:
-        desenharFigura(figura, tag="definitivo")
+        # chama o método da própria classe
+        figura.desenhar(canvas, tag="definitivo")
 
-
-# Função desenhar na tela baseada no tipo
-def desenharFigura(figura, tag=""):
-    tipo, coordenadas, cor_borda_figura, cor_preenchimento_figura = figura
-    tracejado = (4, 2) if tag == "preview" else None
-    
-    # Cor e estilo opcionais
-    kwargs = {'outline': cor_borda_figura,'tags': tag}
-    if tracejado: kwargs['dash'] = tracejado
-    if cor_preenchimento_figura: kwargs['fill'] = cor_preenchimento_figura
-
-    match tipo:
-        case "linha":
-            canvas.create_line(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], fill=cor_borda_figura, dash=tracejado, tags=tag)        
-        case "rabisco":
-            canvas.create_line(coordenadas, fill=cor_borda_figura, dash=tracejado, tags=tag)
-        case "retangulo":
-            canvas.create_rectangle(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
-        case "oval":
-            canvas.create_oval(coordenadas[0], coordenadas[1], coordenadas[2], coordenadas[3], **kwargs)
-        case "circulo":
-            dx = coordenadas[2] - coordenadas[0]
-            dy = coordenadas[3] - coordenadas[1]
-            tamanho_lado = max(abs(dx), abs(dy))
-            x_final = coordenadas[0] + (tamanho_lado if dx > 0 else -tamanho_lado)
-            y_final = coordenadas[1] + (tamanho_lado if dy > 0 else -tamanho_lado)
-            
-            canvas.create_oval(coordenadas[0], coordenadas[1], x_final, y_final, **kwargs)
 
 # INTERFACE GRÁFICA
 root = tk.Tk()
