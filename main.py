@@ -1,6 +1,6 @@
 import tkinter as tk
 # Modulo das classes criadas
-from figuras import Linha, Rabisco, Retangulo, Oval, Circulo
+from figuras import Linha, Rabisco, Retangulo, Oval, Circulo, Poligono
 
 
 # Variáveis de estado global 
@@ -10,12 +10,28 @@ ferramenta = "rabisco"
 cor_atual_borda = "black"
 cor_atual_preenchimento = "" 
 cor_alvo = "borda"
+num_lados_poligono = 6
 
 
 # Função para atualizar a ferramenta selecionada no menu
 def mudarFerramenta(nova_ferramenta):
     global ferramenta
     ferramenta = nova_ferramenta
+
+    # Mostra o controle de lados só quando a ferramenta polígono está ativa
+    if nova_ferramenta == "poligono":
+        frame_lados.pack(pady=5, fill="x", padx=5, after=frame_ferramentas_botoes)
+    else:
+        frame_lados.pack_forget()
+
+
+# Função para atualizar a quantidade de lados do polígono
+def mudarNumLados(valor):
+    global num_lados_poligono
+    try:
+        num_lados_poligono = max(3, int(valor))
+    except ValueError:
+        pass
 
 
 # Função para definir se é a borda ou o preenchimento que mudará de cor
@@ -61,6 +77,8 @@ def iniciarFigura(event):
             nova_figura = Oval([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
         case 'circulo':
             nova_figura = Circulo([x, y, x, y], cor_atual_borda, cor_atual_preenchimento)
+        case 'poligono':
+            nova_figura = Poligono([x, y, x, y], cor_atual_borda, cor_atual_preenchimento, num_lados=num_lados_poligono)
 
 
 # Função que atualiza as coordenadas da figura enquanto o mouse é arrastado (preview)
@@ -138,9 +156,26 @@ canvas.bind('<ButtonRelease-1>', incluirFigura)
 
 # Menu de Ferramentas
 tk.Label(frame_esquerda, text="FERRAMENTAS", bg="#e0e0e0", font=("Verdana", 8, "bold")).pack(pady=5)
-ferramentas = [("Lápis", "rabisco"), ("Linha", "linha"), ("Retângulo", "retangulo"), ("Oval", "oval"), ("Círculo", "circulo")]
+
+frame_ferramentas_botoes = tk.Frame(frame_esquerda, bg="#e0e0e0")
+frame_ferramentas_botoes.pack(fill="x")
+
+ferramentas = [("Lápis", "rabisco"), ("Linha", "linha"), ("Retângulo", "retangulo"), ("Oval", "oval"), ("Círculo", "circulo"), ("Polígono", "poligono")]
 for texto, val in ferramentas:
-    tk.Button(frame_esquerda, text=texto, command=lambda v=val: mudarFerramenta(v), width=10).pack(pady=2)
+    tk.Button(frame_ferramentas_botoes, text=texto, command=lambda v=val: mudarFerramenta(v), width=10).pack(pady=2)
+
+# Controle de número de lados do polígono (fica escondido até a ferramenta ser selecionada)
+frame_lados = tk.Frame(frame_esquerda, bg="#e0e0e0")
+tk.Label(frame_lados, text="Lados:", bg="#e0e0e0", font=("Verdana", 8)).pack(side="left")
+spin_lados = tk.Spinbox(
+    frame_lados, from_=3, to=12, width=4,
+    command=lambda: mudarNumLados(spin_lados.get())
+)
+spin_lados.delete(0, "end")
+spin_lados.insert(0, str(num_lados_poligono))
+spin_lados.pack(side="left", padx=5)
+# Também atualiza se o usuário digitar o número direto no campo
+spin_lados.bind("<KeyRelease>", lambda e: mudarNumLados(spin_lados.get()))
 
 tk.Label(frame_esquerda, text="\nCORES", bg="#e0e0e0", font=("Verdana", 8, "bold")).pack()
 botao_cor_borda = tk.Button(frame_esquerda, text="Cor da Borda", bg="black", fg="white", relief="sunken", command=lambda: setCorAlvo("borda"))
