@@ -1,7 +1,7 @@
 import tkinter as tk
-from model.desenho import DesenhoModel
-from controller.paintController import PaintController
-from view.janela import JanelaView
+from src.lss_paint.model.desenho import DesenhoModel
+from src.lss_paint.controller.paintController import PaintController
+from src.lss_paint.view.janela import JanelaView
 
 def main():
     root = tk.Tk()
