@@ -1,4 +1,4 @@
-from model.figuras import Linha, Rabisco, Retangulo, Oval, Circulo, Poligono
+from src.lss_paint.model.figuras import Linha, Rabisco, Retangulo, Oval, Circulo, Poligono
 
 
 class PaintController:
