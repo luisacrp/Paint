@@ -2,19 +2,17 @@ import math
 
 # Superclasse
 class Figura: 
-  def __init__(self, coordenadas, cor_borda, cor_preenchimento = ""):
-    self.coordenadas = coordenadas
-    self.cor_borda = cor_borda
-    self.cor_preenchimento = cor_preenchimento 
+    def __init__(self, coordenadas, cor_borda, cor_preenchimento = ""):
+        self.coordenadas = coordenadas
+        self.cor_borda = cor_borda
+        self.cor_preenchimento = cor_preenchimento 
 
-  def desenhar(self, canvas, tag = ""):
-    tracejado = (4, 2) if tag == "preview" else None
-    return tracejado
+    def desenhar(self, canvas, tag = ""):
+        tracejado = (4, 2) if tag == "preview" else None
+        return tracejado
 
 
-
-# Subclasses
-# O super() chama o "desenhar" da classe mãe apenas para pegar o tracejado pronto
+# Subclasses / Figuras
 class Linha(Figura):
     def desenhar(self, canvas, tag=""):
         tracejado = super().desenhar(canvas, tag)
@@ -30,7 +28,6 @@ class Rabisco(Figura):
 class Retangulo(Figura):
     def desenhar(self, canvas, tag=""):
         tracejado = super().desenhar(canvas, tag)
-        
         if self.cor_preenchimento != "":
             canvas.create_rectangle(self.coordenadas[0], self.coordenadas[1], self.coordenadas[2], self.coordenadas[3], outline=self.cor_borda, fill=self.cor_preenchimento, dash=tracejado, tags=tag)
         else:
@@ -40,7 +37,6 @@ class Retangulo(Figura):
 class Oval(Figura):
     def desenhar(self, canvas, tag=""):
         tracejado = super().desenhar(canvas, tag)
-        
         if self.cor_preenchimento != "":
             canvas.create_oval(self.coordenadas[0], self.coordenadas[1], self.coordenadas[2], self.coordenadas[3], outline=self.cor_borda, fill=self.cor_preenchimento, dash=tracejado, tags=tag)
         else:
@@ -50,7 +46,6 @@ class Oval(Figura):
 class Circulo(Figura):
     def desenhar(self, canvas, tag=""):
         tracejado = super().desenhar(canvas, tag)
-        
         dx = self.coordenadas[2] - self.coordenadas[0]
         dy = self.coordenadas[3] - self.coordenadas[1]
         tamanho_lado = max(abs(dx), abs(dy))
@@ -70,7 +65,6 @@ class Poligono(Figura):
 
     def desenhar(self, canvas, tag=""):
         tracejado = super().desenhar(canvas, tag)
-
         x1, y1, x2, y2 = self.coordenadas
 
         cx = (x1 + x2) / 2
