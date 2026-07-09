@@ -7,4 +7,3 @@ class DesenhoModel:
         self.cor_atual_preenchimento = "" 
         self.cor_alvo = "borda"
         self.num_lados_poligono = 6
-        

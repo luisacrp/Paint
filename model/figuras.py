@@ -12,7 +12,7 @@ class Figura:
         return tracejado
 
 
-# Subclasses
+# Subclasses / Figuras
 class Linha(Figura):
     def desenhar(self, canvas, tag=""):
         tracejado = super().desenhar(canvas, tag)
