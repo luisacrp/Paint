@@ -1,9 +1,25 @@
+"""
+Módulo de inicialização do sistema LSS Paint.
+Responsável por instanciar os componentes do padrão MVC e iniciar o loop da interface gráfica.
+
+@author Luísa Costa, Sarah Beatriz e Sayran Felix
+@version 1.0
+@since 2026-07-13
+"""
+
 import tkinter as tk
 from src.lss_paint.model.desenho import DesenhoModel
 from src.lss_paint.controller.paintController import PaintController
 from src.lss_paint.view.janela import JanelaView
 
 def main():
+    """
+    Função principal que orquestra a criação e injeção de dependências do MVC.
+    
+    @param: Nenhum
+    @return: Nenhum
+    @throws: Nenhuma exceção tratada especificamente.
+    """
     root = tk.Tk()
 
     # 1. Instancia o Modelo (Dados)
@@ -23,3 +39,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
