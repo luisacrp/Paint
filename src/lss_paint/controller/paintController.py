@@ -78,3 +78,25 @@ class PaintController:
         m.nova_figura = None
 
         self.view.redesenhar_tudo(m.figuras)
+
+
+    def salvar_desenho(self):
+        caminho = filedialog.asksaveasfilename(
+            defaultextension=".lssp", 
+            filetypes=[("LSS Paint Files", "*.lssp"), ("Todos os Arquivos", "*.*")]
+        )
+        if caminho:
+            self.model.salvar_arquivo(caminho)
+
+    def abrir_desenho(self):
+        caminho = filedialog.askopenfilename(
+            filetypes=[("LSS Paint Files", "*.lssp"), ("Todos os Arquivos", "*.*")]
+        )
+        if caminho:
+            self.model.carregar_arquivo(caminho)
+            self.view.redesenhar_tudo(self.model.figuras)
+
+
+
+
+
