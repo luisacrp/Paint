@@ -1,4 +1,4 @@
-# LSS Paint - Documentação e Persistência
+# LSS Paint 
 
 ## 💡 Descrição do Sistema
 Este projeto é a versão final do software de desenho "LSS Paint", construído inteiramente em Python com Tkinter e estruturado no padrão arquitetural MVC (Model-View-Controller). O sistema permite o desenho através de formas primitivas (Linha, Rabisco, Retângulo, Oval, Círculo e Polígono), customização de cores de borda e preenchimento, e possui persistência de dados (funcionalidades nativas de salvar e carregar os projetos em disco).
