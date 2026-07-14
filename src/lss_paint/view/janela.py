@@ -18,6 +18,14 @@ class JanelaView:
     # ===== Montagem da interface =====
 
     def _montar_layout(self):
+        # Barra do menu superior (Arquivos: Salvar/Abrir)
+        menu_bar = tk.Menu(self.root)
+        menu_arquivo = tk.Menu(menu_bar, tearoff=0)
+        menu_arquivo.add_command(label="Abrir...", command=self.controller.abrir_desenho)
+        menu_arquivo.add_command(label="Salvar como...", command=self.controller.salvar_desenho)
+        menu_bar.add_cascade(label="Arquivo", menu=menu_arquivo)
+        self.root.config(menu=menu_bar)
+        
         self.frame_esquerda = tk.Frame(self.root, width=80, bg="#e0e0e0", relief="raised", borderwidth=2)
         self.frame_esquerda.pack(side="left", fill="y")
 
