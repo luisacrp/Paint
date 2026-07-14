@@ -184,8 +184,3 @@ class PaintController:
         if caminho:
             self.model.carregar_arquivo(caminho)
             self.view.redesenhar_tudo(self.model.figuras)
-
-
-
-
-

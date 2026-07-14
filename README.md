@@ -1,23 +1,20 @@
-# LSS Paint: Aplicação Gráfica para Desenho Baseada em Tkinter (Python)
+# LSS Paint - Documentação e Persistência
 
-## 💡 Sobre o Projeto
-Este repositório contém a implementação do projeto "LSS Paint", desenvolvido como requisito avaliativo da disciplina de Programação A, integrante do currículo do bacharelado em Inteligência Artificial da Universidade Federal de Sergipe (UFS) - Campus São Cristóvão. O software consiste em uma aplicação de desenho com interface gráfica de usuário (GUI), desenvolvida inteiramente com a biblioteca padrão da linguagem Python, o Tkinter.
+## 💡 Descrição do Sistema
+Este projeto é a versão final do software de desenho "LSS Paint", construído inteiramente em Python com Tkinter e estruturado no padrão arquitetural MVC (Model-View-Controller). O sistema permite o desenho através de formas primitivas (Linha, Rabisco, Retângulo, Oval, Círculo e Polígono), customização de cores de borda e preenchimento, e possui persistência de dados (funcionalidades nativas de salvar e carregar os projetos em disco).
 
-A arquitetura visual da aplicação foi projetada com foco em usabilidade, adotando um modelo de interface clássico e intuitivo. A divisão estrutural conta com painéis modulares: um menu lateral esquerdo alocando as ferramentas de desenho e um painel inferior contendo a paleta de cores, proporcionando uma experiência ergonômica e nostálgica. 
+## 👥 Equipe
+* **Nome da Equipe:** LSS
+* **Integrantes:**
+  * [Luísa Costa Rodrigues Pereira](https://github.com/luisacrp)
+  * [Sarah Beatriz Barbosa dos Santos](https://github.com/sarah-beattx)
+  * [Sayran Felix Santana](https://github.com/sayranufs)
 
-O desenvolvimento segue uma abordagem de engenharia de software incremental. Atualmente, o código base será submetido a futuras refatorações, com o objetivo de migrar a base estruturada para o paradigma de Orientação a Objetos (OO) e modularizar o sistema segundo o padrão arquitetural MVC (Model-View-Controller).
+## 📊 Métricas de Documentação
+Em cumprimento aos requisitos da Etapa 4, o sistema conta com a documentação completa de suas estruturas:
+* **Quantidade de classes documentadas:** 10 (DesenhoModel, PaintController, JanelaView e a hierarquia de 7 Figuras).
+* **Quantidade de métodos documentados:** 32 (incluindo construtores, ações de interface, persistência e algoritmos de renderização).
 
-## 👥 Equipe de Desenvolvimento
-* [Luísa Costa Rodrigues Pereira](https://github.com/luisacrp)
-* [Sarah Beatriz Barbosa dos Santos](https://github.com/sarah-beattx)
-* [Sayran Felix Santana](https://github.com/sayranufs)
-
-## 🛠️ Funcionalidades Atuais
-* **Ferramentas de Traçado:** Lápis (traçado de forma livre) e Linha (traçado de retas).
-* **Navegabilidade Espacial:** Área de desenho flexível (Canvas) integrada a barras de rolagem (Scrollbars) nos eixos vertical e horizontal, viabilizando a manipulação de áreas de trabalho expandidas e artes de maiores dimensões.
-*  **Formas Geométricas:** Inclusão das funções de renderização para Retângulo, Oval e Círculo.
-*  **Sistema de Cores:** Implementação de uma interface com suporte à seleção independente de mapeamento de cores para o contorno (borda) e para a área interna (preenchimento).
-
-## 🚀 Próximas Etapas
-* **Refatoração de Código:** Transição do modelo imperativo para o paradigma de Orientação a Objetos.
-* **Arquitetura de Software:** Divisão lógica e estrutural de diretórios e arquivos em conformidade estrita com o padrão MVC.
+## 📚 Instruções para visualizar a documentação (Pydoc)
+A documentação técnica detalhada de todas as classes, construtores, métodos e parâmetros foi gerada automaticamente pela ferramenta Pydoc.
+Para visualizá-la, basta navegar até a pasta `docs/` presente na raiz deste repositório e abrir os arquivos `.html` (exemplo: `paintController.html`) em qualquer navegador web de sua preferência (Chrome, Edge, Firefox, etc).

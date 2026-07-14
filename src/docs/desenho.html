@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module desenho</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">desenho</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/sayran/Downloads/Paint/src/lss_paint/model/desenho.py">/home/sayran/Downloads/Paint/src/lss_paint/model/desenho.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="pickle.html">pickle</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="desenho.html#DesenhoModel">DesenhoModel</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="DesenhoModel">class <strong>DesenhoModel</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Classe&nbsp;do&nbsp;Modelo&nbsp;responsável&nbsp;por&nbsp;armazenar&nbsp;o&nbsp;estado&nbsp;global&nbsp;e&nbsp;os&nbsp;dados&nbsp;da&nbsp;aplicação.<br>
+&nbsp;<br>
+Responsabilidade:&nbsp;Manter&nbsp;a&nbsp;lista&nbsp;de&nbsp;figuras&nbsp;desenhadas,&nbsp;opções&nbsp;de&nbsp;ferramentas&nbsp;e&nbsp;cores&nbsp;atuais,&nbsp;<br>
+além&nbsp;de&nbsp;lidar&nbsp;com&nbsp;a&nbsp;persistência&nbsp;de&nbsp;dados&nbsp;em&nbsp;disco.<br>
+&nbsp;<br>
+@author&nbsp;Luísa&nbsp;Costa,&nbsp;Sarah&nbsp;Beatriz&nbsp;e&nbsp;Sayran&nbsp;Felix<br>
+@version&nbsp;1.0<br>
+@since&nbsp;2026-07-13<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="DesenhoModel-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Inicializa&nbsp;as&nbsp;variáveis&nbsp;de&nbsp;estado&nbsp;com&nbsp;seus&nbsp;valores&nbsp;padrão.<br>
+&nbsp;<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="DesenhoModel-carregar_arquivo"><strong>carregar_arquivo</strong></a>(self, caminho)</dt><dd><span class="code">Carrega&nbsp;as&nbsp;figuras&nbsp;de&nbsp;um&nbsp;arquivo&nbsp;serializado&nbsp;para&nbsp;a&nbsp;memória&nbsp;do&nbsp;modelo.<br>
+&nbsp;<br>
+@param&nbsp;caminho:&nbsp;Caminho&nbsp;completo&nbsp;do&nbsp;arquivo&nbsp;a&nbsp;ser&nbsp;lido.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Exception:&nbsp;Caso&nbsp;o&nbsp;arquivo&nbsp;esteja&nbsp;corrompido&nbsp;ou&nbsp;o&nbsp;caminho&nbsp;seja&nbsp;inválido.<br>
+@see&nbsp;pickle.load</span></dd></dl>
+
+<dl><dt><a name="DesenhoModel-salvar_arquivo"><strong>salvar_arquivo</strong></a>(self, caminho)</dt><dd><span class="code">Salva&nbsp;o&nbsp;estado&nbsp;atual&nbsp;das&nbsp;figuras&nbsp;em&nbsp;um&nbsp;arquivo&nbsp;serializado.<br>
+&nbsp;<br>
+@param&nbsp;caminho:&nbsp;Caminho&nbsp;completo&nbsp;escolhido&nbsp;pelo&nbsp;usuário&nbsp;para&nbsp;salvar&nbsp;o&nbsp;arquivo.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Exception:&nbsp;Caso&nbsp;ocorra&nbsp;erro&nbsp;de&nbsp;permissão&nbsp;ou&nbsp;falha&nbsp;ao&nbsp;gravar&nbsp;o&nbsp;arquivo.<br>
+@see&nbsp;pickle.dump</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
