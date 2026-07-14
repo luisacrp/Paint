@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module figuras</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">figuras</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/sayran/Downloads/Paint/src/lss_paint/model/figuras.py">/home/sayran/Downloads/Paint/src/lss_paint/model/figuras.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="figuras.html#Figura">Figura</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="figuras.html#Circulo">Circulo</a>
+</dt><dt class="heading-text"><a href="figuras.html#Linha">Linha</a>
+</dt><dt class="heading-text"><a href="figuras.html#Oval">Oval</a>
+</dt><dt class="heading-text"><a href="figuras.html#Poligono">Poligono</a>
+</dt><dt class="heading-text"><a href="figuras.html#Rabisco">Rabisco</a>
+</dt><dt class="heading-text"><a href="figuras.html#Retangulo">Retangulo</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Circulo">class <strong>Circulo</strong></a>(<a href="figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Circulo">Circulo</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='')<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;pela&nbsp;renderização&nbsp;de&nbsp;círculos&nbsp;perfeitos&nbsp;proporcionais.&nbsp;Herda&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="figuras.html#Circulo">Circulo</a></dd>
+<dd><a href="figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Circulo-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Método&nbsp;base&nbsp;de&nbsp;desenho&nbsp;que&nbsp;determina&nbsp;as&nbsp;propriedades&nbsp;visuais&nbsp;de&nbsp;visualização&nbsp;(preview).<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;renderizada.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Tupla&nbsp;definindo&nbsp;o&nbsp;padrão&nbsp;de&nbsp;tracejado&nbsp;ou&nbsp;None.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Circulo-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='')</dt><dd><span class="code">Construtor&nbsp;da&nbsp;superclasse&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;do&nbsp;contorno.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;interna&nbsp;(opcional).<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Figura">class <strong>Figura</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Figura">Figura</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='')<br>
+&nbsp;<br>
+Superclasse&nbsp;abstrata&nbsp;que&nbsp;define&nbsp;a&nbsp;estrutura&nbsp;básica&nbsp;de&nbsp;qualquer&nbsp;forma&nbsp;geométrica&nbsp;no&nbsp;sistema.<br>
+&nbsp;<br>
+Responsabilidade:&nbsp;Armazenar&nbsp;coordenadas,&nbsp;cores&nbsp;e&nbsp;fornecer&nbsp;o&nbsp;comportamento&nbsp;padrão&nbsp;de&nbsp;traçado.<br>
+&nbsp;<br>
+@author&nbsp;Luísa&nbsp;Costa,&nbsp;Sarah&nbsp;Beatriz&nbsp;e&nbsp;Sayran&nbsp;Felix<br>
+@version&nbsp;1.0<br>
+@since&nbsp;2026-07-13<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Figura-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='')</dt><dd><span class="code">Construtor&nbsp;da&nbsp;superclasse&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;do&nbsp;contorno.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;interna&nbsp;(opcional).<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="Figura-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Método&nbsp;base&nbsp;de&nbsp;desenho&nbsp;que&nbsp;determina&nbsp;as&nbsp;propriedades&nbsp;visuais&nbsp;de&nbsp;visualização&nbsp;(preview).<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;renderizada.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Tupla&nbsp;definindo&nbsp;o&nbsp;padrão&nbsp;de&nbsp;tracejado&nbsp;ou&nbsp;None.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Linha">class <strong>Linha</strong></a>(<a href="figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Linha">Linha</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='')<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;pelo&nbsp;traçado&nbsp;de&nbsp;linhas&nbsp;retas.&nbsp;Herda&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="figuras.html#Linha">Linha</a></dd>
+<dd><a href="figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Linha-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Método&nbsp;base&nbsp;de&nbsp;desenho&nbsp;que&nbsp;determina&nbsp;as&nbsp;propriedades&nbsp;visuais&nbsp;de&nbsp;visualização&nbsp;(preview).<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;renderizada.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Tupla&nbsp;definindo&nbsp;o&nbsp;padrão&nbsp;de&nbsp;tracejado&nbsp;ou&nbsp;None.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Linha-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='')</dt><dd><span class="code">Construtor&nbsp;da&nbsp;superclasse&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;do&nbsp;contorno.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;interna&nbsp;(opcional).<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Oval">class <strong>Oval</strong></a>(<a href="figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Oval">Oval</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='')<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;pela&nbsp;renderização&nbsp;de&nbsp;formas&nbsp;ovais.&nbsp;Herda&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="figuras.html#Oval">Oval</a></dd>
+<dd><a href="figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Oval-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Método&nbsp;base&nbsp;de&nbsp;desenho&nbsp;que&nbsp;determina&nbsp;as&nbsp;propriedades&nbsp;visuais&nbsp;de&nbsp;visualização&nbsp;(preview).<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;renderizada.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Tupla&nbsp;definindo&nbsp;o&nbsp;padrão&nbsp;de&nbsp;tracejado&nbsp;ou&nbsp;None.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Oval-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='')</dt><dd><span class="code">Construtor&nbsp;da&nbsp;superclasse&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;do&nbsp;contorno.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;interna&nbsp;(opcional).<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Poligono">class <strong>Poligono</strong></a>(<a href="figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Poligono">Poligono</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='',&nbsp;num_lados=6)<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;pela&nbsp;renderização&nbsp;de&nbsp;polígonos&nbsp;regulares.&nbsp;Herda&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@author&nbsp;Luísa&nbsp;Costa,&nbsp;Sarah&nbsp;Beatriz&nbsp;e&nbsp;Sayran&nbsp;Felix<br>
+@version&nbsp;1.0<br>
+@since&nbsp;2026-07-13<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="figuras.html#Poligono">Poligono</a></dd>
+<dd><a href="figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Poligono-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='', num_lados=6)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#Poligono">Poligono</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;extremidades&nbsp;base&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;da&nbsp;cor&nbsp;da&nbsp;borda.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;da&nbsp;cor&nbsp;de&nbsp;fundo.<br>
+@param&nbsp;num_lados:&nbsp;Quantidade&nbsp;de&nbsp;lados&nbsp;(arestas)&nbsp;do&nbsp;polígono.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="Poligono-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Realiza&nbsp;o&nbsp;cálculo&nbsp;trigonométrico&nbsp;dos&nbsp;vértices&nbsp;e&nbsp;renderiza&nbsp;o&nbsp;polígono&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Rabisco">class <strong>Rabisco</strong></a>(<a href="figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Rabisco">Rabisco</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='')<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;pelo&nbsp;traçado&nbsp;à&nbsp;mão&nbsp;livre&nbsp;(lápis).&nbsp;Herda&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="figuras.html#Rabisco">Rabisco</a></dd>
+<dd><a href="figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Rabisco-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Método&nbsp;base&nbsp;de&nbsp;desenho&nbsp;que&nbsp;determina&nbsp;as&nbsp;propriedades&nbsp;visuais&nbsp;de&nbsp;visualização&nbsp;(preview).<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;renderizada.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Tupla&nbsp;definindo&nbsp;o&nbsp;padrão&nbsp;de&nbsp;tracejado&nbsp;ou&nbsp;None.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Rabisco-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='')</dt><dd><span class="code">Construtor&nbsp;da&nbsp;superclasse&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;do&nbsp;contorno.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;interna&nbsp;(opcional).<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Retangulo">class <strong>Retangulo</strong></a>(<a href="figuras.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Retangulo">Retangulo</a>(coordenadas,&nbsp;cor_borda,&nbsp;cor_preenchimento='')<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;pela&nbsp;renderização&nbsp;de&nbsp;retângulos.&nbsp;Herda&nbsp;de&nbsp;<a href="#Figura">Figura</a>.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="figuras.html#Retangulo">Retangulo</a></dd>
+<dd><a href="figuras.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Retangulo-desenhar"><strong>desenhar</strong></a>(self, canvas, tag='')</dt><dd><span class="code">Método&nbsp;base&nbsp;de&nbsp;desenho&nbsp;que&nbsp;determina&nbsp;as&nbsp;propriedades&nbsp;visuais&nbsp;de&nbsp;visualização&nbsp;(preview).<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;Objeto&nbsp;Canvas&nbsp;do&nbsp;Tkinter&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;renderizada.<br>
+@param&nbsp;tag:&nbsp;Tag&nbsp;de&nbsp;identificação&nbsp;("preview"&nbsp;ou&nbsp;"definitivo").<br>
+@return&nbsp;Tupla&nbsp;definindo&nbsp;o&nbsp;padrão&nbsp;de&nbsp;tracejado&nbsp;ou&nbsp;None.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Retangulo-__init__"><strong>__init__</strong></a>(self, coordenadas, cor_borda, cor_preenchimento='')</dt><dd><span class="code">Construtor&nbsp;da&nbsp;superclasse&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+@param&nbsp;coordenadas:&nbsp;Lista&nbsp;contendo&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;[x1,&nbsp;y1,&nbsp;x2,&nbsp;y2].<br>
+@param&nbsp;cor_borda:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;do&nbsp;contorno.<br>
+@param&nbsp;cor_preenchimento:&nbsp;String&nbsp;hexadecimal&nbsp;representando&nbsp;a&nbsp;cor&nbsp;interna&nbsp;(opcional).<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="figuras.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
