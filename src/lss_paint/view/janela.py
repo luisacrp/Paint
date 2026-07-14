@@ -1,8 +1,24 @@
 import tkinter as tk
 
-
 class JanelaView:
+    """
+    Classe da View que gerencia e constrói a Interface Gráfica do Usuário (GUI) usando Tkinter.
+    
+    Responsabilidade: Desenhar os menus laterais, paletas, barra de menu superior e 
+    vincular os cliques aos métodos correspondentes do controlador.
+    
+    @author Luísa Costa, Sarah Beatriz e Sayran Felix
+    @version 1.0
+    @since 2026-07-13
+    """
     def __init__(self, root, controller):
+        """
+        Construtor da classe visual JanelaView.
+        
+        @param root: Objeto mestre gerador da janela base do Tkinter.
+        @param controller: Instância de PaintController que responderá às ações visuais.
+        @throws Nenhuma exceção.
+        """
         self.root = root
         self.controller = controller
 
@@ -120,18 +136,40 @@ class JanelaView:
                 command=lambda c=cor: self.controller.selecionar_cor(c)
             ).grid(row=0, column=coluna, padx=1, pady=1)
 
-    # ===== Métodos chamados pelo controller para atualizar a tela =====
-
+   
+    # ===== Métodos Públicos =====
+    
     def canvas_coords(self, event):
+        """
+        Ajusta o ponto de clique considerando o deslocamento ativo das barras de rolagem.
+        
+        @param event: Objeto de clique de mouse do Tkinter.
+        @return Tupla de floats representando as posições x e y corrigidas.
+        @throws Nenhuma exceção.
+        """
         return self.canvas.canvasx(event.x), self.canvas.canvasy(event.y)
 
     def atualizar_visibilidade_lados(self, mostrar):
+        """
+        Exibe ou oculta o seletor de lados do polígono na view.
+        
+        @param mostrar: Booleano ditando o controle de visibilidade.
+        @return Nenhum.
+        @throws Nenhuma exceção.
+        """
         if mostrar:
             self.frame_lados.pack(pady=5, fill="x", padx=5, after=self.frame_ferramentas_botoes)
         else:
             self.frame_lados.pack_forget()
 
     def atualizar_botoes_cor(self, alvo):
+        """
+        Altera o relevo visual dos botões de alvo para indicar qual está ativo.
+        
+        @param alvo: String que pode ser 'borda' ou 'preenchimento'.
+        @return Nenhum.
+        @throws Nenhuma exceção.
+        """
         if alvo == "borda":
             self.botao_cor_borda.config(relief="sunken")
             self.botao_cor_preenchimento.config(relief="raised")
@@ -140,17 +178,39 @@ class JanelaView:
             self.botao_cor_preenchimento.config(relief="sunken")
 
     def atualizar_cor_botao(self, alvo, cor):
+        """
+        Colore graficamente o botão de seleção atual para feedback visual do usuário.
+        
+        @param alvo: Botão alvo da modificação ("borda" ou "preenchimento").
+        @param cor: Background color em String hexadecimal.
+        @return Nenhum.
+        @throws Nenhuma exceção.
+        """
         if alvo == "borda":
             self.botao_cor_borda.config(bg=cor)
         else:
             self.botao_cor_preenchimento.config(bg=cor)
 
     def desenhar_preview(self, figura):
+        """
+        Comanda o desenho em tempo real da forma atual sendo arrastada.
+        
+        @param figura: Objeto instanciado herdeiro da classe Figura.
+        @return Nenhum.
+        @throws Nenhuma exceção.
+        """
         self.canvas.delete("preview")
         if figura:
             figura.desenhar(self.canvas, tag="preview")
 
     def redesenhar_tudo(self, figuras):
+        """
+        Limpa a tela e varre a lista renderizando definitivamente todos os itens após load ou soltura de clique.
+        
+        @param figuras: Lista atualizada de objetos gráficos.
+        @return Nenhum.
+        @throws Nenhuma exceção.
+        """
         self.canvas.delete("preview")
         self.canvas.delete("definitivo")
         for figura in figuras:
