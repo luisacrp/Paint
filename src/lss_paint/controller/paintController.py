@@ -1,3 +1,4 @@
+from tkinter import filedialog
 from src.lss_paint.model.figuras import Linha, Rabisco, Retangulo, Oval, Circulo, Poligono
 
 
