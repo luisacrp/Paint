@@ -1,17 +1,16 @@
 from tkinter import filedialog
-from src.lss_paint.model.figuras import Linha, Rabisco, Retangulo, Oval, Circulo, Poligono
-
+from src.lss_paint.controller.estados import (EstadoRabisco, EstadoLinha, EstadoRetangulo, EstadoOval, EstadoCirculo, EstadoPoligono)
 
 class PaintController:
     """
     Controlador do padrão MVC que intermedeia interações do usuário com as regras do Model.
     
     Responsabilidade: Receber eventos da interface gráfica, manipular instâncias geométricas 
-    e gerir operações de cores e persistência.
+    e gerir operações de cores e persistência utilizando o Padrão State.
     
     @author Luísa Costa, Sarah Beatriz e Sayran Felix
-    @version 1.0
-    @since 2026-07-13
+    @version 2.0
+    @since 2026-07-19
     """
     def __init__(self, model):
         """
@@ -22,6 +21,17 @@ class PaintController:
         """
         self.model = model
         self.view = None
+        
+        # Mapeamento do Padrão State
+        self.estados = {
+            'rabisco': EstadoRabisco(),
+            'linha': EstadoLinha(),
+            'retangulo': EstadoRetangulo(),
+            'oval': EstadoOval(),
+            'circulo': EstadoCirculo(),
+            'poligono': EstadoPoligono()
+        }
+        self.estado_atual = self.estados['rabisco']
 
     def associar_visao(self, view):
         """
@@ -35,13 +45,17 @@ class PaintController:
 
     def mudar_ferramenta(self, nova_ferramenta):
         """
-        Atualiza a ferramenta ativa e aciona mudança visual se for um polígono.
+        Atualiza a ferramenta ativa e altera o estado (State) do comportamento do mouse.
         
         @param nova_ferramenta: String contendo o nome da ferramenta selecionada.
         @return Nenhum.
         @throws Nenhuma exceção.
         """
         self.model.ferramenta = nova_ferramenta
+        
+        # Altera o comportamento do controlador baseado no novo estado selecionado
+        self.estado_atual = self.estados[nova_ferramenta]
+        
         self.view.atualizar_visibilidade_lados(nova_ferramenta == "poligono")
 
     def mudar_num_lados(self, valor):
@@ -88,54 +102,35 @@ class PaintController:
 
         self.view.atualizar_cor_botao(self.model.cor_alvo, cor_botao)
 
-    # ===== Desenho =====
+    # ===== Desenho (Refatorado com Padrão State) =====
 
     def iniciar_figura(self, event):
         """
-        Captura o clique inicial do mouse e instancia o objeto da ferramenta ativa.
+        Captura o clique inicial do mouse e delega a criação da figura ao Estado ativo.
         
         @param event: Objeto de evento do Tkinter contendo coordenadas x e y do mouse.
         @return Nenhum.
         @throws Nenhuma exceção.
         """
-        m = self.model
         x, y = self.view.canvas_coords(event)
-
-        match m.ferramenta:
-            case 'linha':
-                m.nova_figura = Linha([x, y, x, y], m.cor_atual_borda, m.cor_atual_preenchimento)
-            case 'rabisco':
-                m.nova_figura = Rabisco([(x, y)], m.cor_atual_borda, m.cor_atual_preenchimento)
-            case 'retangulo':
-                m.nova_figura = Retangulo([x, y, x, y], m.cor_atual_borda, m.cor_atual_preenchimento)
-            case 'oval':
-                m.nova_figura = Oval([x, y, x, y], m.cor_atual_borda, m.cor_atual_preenchimento)
-            case 'circulo':
-                m.nova_figura = Circulo([x, y, x, y], m.cor_atual_borda, m.cor_atual_preenchimento)
-            case 'poligono':
-                m.nova_figura = Poligono([x, y, x, y], m.cor_atual_borda, m.cor_atual_preenchimento, num_lados=m.num_lados_poligono)
+        # O comportamento varia conforme o estado atual, sem o uso de "match"
+        self.estado_atual.iniciar_figura(self, x, y)
 
     def atualizar_figura(self, event):
         """
-        Ajusta as coordenadas da figura atual conforme o movimento do mouse para simular preview.
+        Ajusta as coordenadas da figura atual através do Estado ativo, simulando preview.
         
         @param event: Objeto de evento do Tkinter com as coordenadas em tempo real.
         @return Nenhum.
         @throws Nenhuma exceção.
         """
-        m = self.model
-        if not m.nova_figura:
+        if not self.model.nova_figura:
             return
 
         x, y = self.view.canvas_coords(event)
-
-        if isinstance(m.nova_figura, Rabisco):
-            m.nova_figura.coordenadas.append((x, y))
-        else:
-            m.nova_figura.coordenadas[2] = x
-            m.nova_figura.coordenadas[3] = y
-
-        self.view.desenhar_preview(m.nova_figura)
+        # O comportamento de arrasto é delegado ao estado ativo, sem o uso de "if isinstance"
+        self.estado_atual.atualizar_figura(self, x, y)
+        self.view.desenhar_preview(self.model.nova_figura)
 
     def incluir_figura(self, event):
         """
@@ -152,7 +147,6 @@ class PaintController:
 
         self.view.redesenhar_tudo(m.figuras)
 
-    
     # ===== Persistência =====
     
     def salvar_desenho(self):

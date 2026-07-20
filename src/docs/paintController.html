@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Python: module paintController</title>
+<title>Python: module src.lss_paint.controller.paintController</title>
 </head><body>
 
 <table class="heading">
 <tr class="heading-text decor">
-<td class="title">&nbsp;<br><strong class="title">paintController</strong></td>
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.lss_paint.html" class="white">lss_paint</a>.<a href="src.lss_paint.controller.html" class="white">controller</a>.paintController</strong></td>
 <td class="extra"><a href=".">index</a><br><a href="file:/home/sayran/Downloads/Paint/src/lss_paint/controller/paintController.py">/home/sayran/Downloads/Paint/src/lss_paint/controller/paintController.py</a></td></tr></table>
     <p></p>
 <p>
@@ -27,7 +27,7 @@
 <dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
 </dt><dd>
 <dl>
-<dt class="heading-text"><a href="paintController.html#PaintController">PaintController</a>
+<dt class="heading-text"><a href="src.lss_paint.controller.paintController.html#PaintController">PaintController</a>
 </dt></dl>
 </dd>
 </dl>
@@ -42,11 +42,11 @@
 Controlador&nbsp;do&nbsp;padrão&nbsp;MVC&nbsp;que&nbsp;intermedeia&nbsp;interações&nbsp;do&nbsp;usuário&nbsp;com&nbsp;as&nbsp;regras&nbsp;do&nbsp;Model.<br>
 &nbsp;<br>
 Responsabilidade:&nbsp;Receber&nbsp;eventos&nbsp;da&nbsp;interface&nbsp;gráfica,&nbsp;manipular&nbsp;instâncias&nbsp;geométricas&nbsp;<br>
-e&nbsp;gerir&nbsp;operações&nbsp;de&nbsp;cores&nbsp;e&nbsp;persistência.<br>
+e&nbsp;gerir&nbsp;operações&nbsp;de&nbsp;cores&nbsp;e&nbsp;persistência&nbsp;utilizando&nbsp;o&nbsp;Padrão&nbsp;State.<br>
 &nbsp;<br>
 @author&nbsp;Luísa&nbsp;Costa,&nbsp;Sarah&nbsp;Beatriz&nbsp;e&nbsp;Sayran&nbsp;Felix<br>
-@version&nbsp;1.0<br>
-@since&nbsp;2026-07-13<br>&nbsp;</span></td></tr>
+@version&nbsp;2.0<br>
+@since&nbsp;2026-07-19<br>&nbsp;</span></td></tr>
 <tr><td>&nbsp;</td>
 <td class="singlecolumn">Methods defined here:<br>
 <dl><dt><a name="PaintController-__init__"><strong>__init__</strong></a>(self, model)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;<a href="#PaintController">PaintController</a>.<br>
@@ -66,7 +66,7 @@ e&nbsp;gerir&nbsp;operações&nbsp;de&nbsp;cores&nbsp;e&nbsp;persistência.<br>
 @return&nbsp;Nenhum.<br>
 @throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
 
-<dl><dt><a name="PaintController-atualizar_figura"><strong>atualizar_figura</strong></a>(self, event)</dt><dd><span class="code">Ajusta&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;atual&nbsp;conforme&nbsp;o&nbsp;movimento&nbsp;do&nbsp;mouse&nbsp;para&nbsp;simular&nbsp;preview.<br>
+<dl><dt><a name="PaintController-atualizar_figura"><strong>atualizar_figura</strong></a>(self, event)</dt><dd><span class="code">Ajusta&nbsp;as&nbsp;coordenadas&nbsp;da&nbsp;figura&nbsp;atual&nbsp;através&nbsp;do&nbsp;Estado&nbsp;ativo,&nbsp;simulando&nbsp;preview.<br>
 &nbsp;<br>
 @param&nbsp;event:&nbsp;Objeto&nbsp;de&nbsp;evento&nbsp;do&nbsp;Tkinter&nbsp;com&nbsp;as&nbsp;coordenadas&nbsp;em&nbsp;tempo&nbsp;real.<br>
 @return&nbsp;Nenhum.<br>
@@ -78,13 +78,13 @@ e&nbsp;gerir&nbsp;operações&nbsp;de&nbsp;cores&nbsp;e&nbsp;persistência.<br>
 @return&nbsp;Nenhum.<br>
 @throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
 
-<dl><dt><a name="PaintController-iniciar_figura"><strong>iniciar_figura</strong></a>(self, event)</dt><dd><span class="code">Captura&nbsp;o&nbsp;clique&nbsp;inicial&nbsp;do&nbsp;mouse&nbsp;e&nbsp;instancia&nbsp;o&nbsp;objeto&nbsp;da&nbsp;ferramenta&nbsp;ativa.<br>
+<dl><dt><a name="PaintController-iniciar_figura"><strong>iniciar_figura</strong></a>(self, event)</dt><dd><span class="code">Captura&nbsp;o&nbsp;clique&nbsp;inicial&nbsp;do&nbsp;mouse&nbsp;e&nbsp;delega&nbsp;a&nbsp;criação&nbsp;da&nbsp;figura&nbsp;ao&nbsp;Estado&nbsp;ativo.<br>
 &nbsp;<br>
 @param&nbsp;event:&nbsp;Objeto&nbsp;de&nbsp;evento&nbsp;do&nbsp;Tkinter&nbsp;contendo&nbsp;coordenadas&nbsp;x&nbsp;e&nbsp;y&nbsp;do&nbsp;mouse.<br>
 @return&nbsp;Nenhum.<br>
 @throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
 
-<dl><dt><a name="PaintController-mudar_ferramenta"><strong>mudar_ferramenta</strong></a>(self, nova_ferramenta)</dt><dd><span class="code">Atualiza&nbsp;a&nbsp;ferramenta&nbsp;ativa&nbsp;e&nbsp;aciona&nbsp;mudança&nbsp;visual&nbsp;se&nbsp;for&nbsp;um&nbsp;polígono.<br>
+<dl><dt><a name="PaintController-mudar_ferramenta"><strong>mudar_ferramenta</strong></a>(self, nova_ferramenta)</dt><dd><span class="code">Atualiza&nbsp;a&nbsp;ferramenta&nbsp;ativa&nbsp;e&nbsp;altera&nbsp;o&nbsp;estado&nbsp;(State)&nbsp;do&nbsp;comportamento&nbsp;do&nbsp;mouse.<br>
 &nbsp;<br>
 @param&nbsp;nova_ferramenta:&nbsp;String&nbsp;contendo&nbsp;o&nbsp;nome&nbsp;da&nbsp;ferramenta&nbsp;selecionada.<br>
 @return&nbsp;Nenhum.<br>
