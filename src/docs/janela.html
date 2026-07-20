@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module janela</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">janela</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/sayran/Downloads/Paint/src/lss_paint/view/janela.py">/home/sayran/Downloads/Paint/src/lss_paint/view/janela.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="tkinter.html">tkinter</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="janela.html#JanelaView">JanelaView</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="JanelaView">class <strong>JanelaView</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#JanelaView">JanelaView</a>(root,&nbsp;controller)<br>
+&nbsp;<br>
+Classe&nbsp;da&nbsp;View&nbsp;que&nbsp;gerencia&nbsp;e&nbsp;constrói&nbsp;a&nbsp;Interface&nbsp;Gráfica&nbsp;do&nbsp;Usuário&nbsp;(GUI)&nbsp;usando&nbsp;Tkinter.<br>
+&nbsp;<br>
+Responsabilidade:&nbsp;Desenhar&nbsp;os&nbsp;menus&nbsp;laterais,&nbsp;paletas,&nbsp;barra&nbsp;de&nbsp;menu&nbsp;superior&nbsp;e&nbsp;<br>
+vincular&nbsp;os&nbsp;cliques&nbsp;aos&nbsp;métodos&nbsp;correspondentes&nbsp;do&nbsp;controlador.<br>
+&nbsp;<br>
+@author&nbsp;Luísa&nbsp;Costa,&nbsp;Sarah&nbsp;Beatriz&nbsp;e&nbsp;Sayran&nbsp;Felix<br>
+@version&nbsp;1.0<br>
+@since&nbsp;2026-07-13<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="JanelaView-__init__"><strong>__init__</strong></a>(self, root, controller)</dt><dd><span class="code">Construtor&nbsp;da&nbsp;classe&nbsp;visual&nbsp;<a href="#JanelaView">JanelaView</a>.<br>
+&nbsp;<br>
+@param&nbsp;root:&nbsp;Objeto&nbsp;mestre&nbsp;gerador&nbsp;da&nbsp;janela&nbsp;base&nbsp;do&nbsp;Tkinter.<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;de&nbsp;PaintController&nbsp;que&nbsp;responderá&nbsp;às&nbsp;ações&nbsp;visuais.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="JanelaView-atualizar_botoes_cor"><strong>atualizar_botoes_cor</strong></a>(self, alvo)</dt><dd><span class="code">Altera&nbsp;o&nbsp;relevo&nbsp;visual&nbsp;dos&nbsp;botões&nbsp;de&nbsp;alvo&nbsp;para&nbsp;indicar&nbsp;qual&nbsp;está&nbsp;ativo.<br>
+&nbsp;<br>
+@param&nbsp;alvo:&nbsp;String&nbsp;que&nbsp;pode&nbsp;ser&nbsp;'borda'&nbsp;ou&nbsp;'preenchimento'.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="JanelaView-atualizar_cor_botao"><strong>atualizar_cor_botao</strong></a>(self, alvo, cor)</dt><dd><span class="code">Colore&nbsp;graficamente&nbsp;o&nbsp;botão&nbsp;de&nbsp;seleção&nbsp;atual&nbsp;para&nbsp;feedback&nbsp;visual&nbsp;do&nbsp;usuário.<br>
+&nbsp;<br>
+@param&nbsp;alvo:&nbsp;Botão&nbsp;alvo&nbsp;da&nbsp;modificação&nbsp;("borda"&nbsp;ou&nbsp;"preenchimento").<br>
+@param&nbsp;cor:&nbsp;Background&nbsp;color&nbsp;em&nbsp;String&nbsp;hexadecimal.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="JanelaView-atualizar_visibilidade_lados"><strong>atualizar_visibilidade_lados</strong></a>(self, mostrar)</dt><dd><span class="code">Exibe&nbsp;ou&nbsp;oculta&nbsp;o&nbsp;seletor&nbsp;de&nbsp;lados&nbsp;do&nbsp;polígono&nbsp;na&nbsp;view.<br>
+&nbsp;<br>
+@param&nbsp;mostrar:&nbsp;Booleano&nbsp;ditando&nbsp;o&nbsp;controle&nbsp;de&nbsp;visibilidade.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="JanelaView-canvas_coords"><strong>canvas_coords</strong></a>(self, event)</dt><dd><span class="code">Ajusta&nbsp;o&nbsp;ponto&nbsp;de&nbsp;clique&nbsp;considerando&nbsp;o&nbsp;deslocamento&nbsp;ativo&nbsp;das&nbsp;barras&nbsp;de&nbsp;rolagem.<br>
+&nbsp;<br>
+@param&nbsp;event:&nbsp;Objeto&nbsp;de&nbsp;clique&nbsp;de&nbsp;mouse&nbsp;do&nbsp;Tkinter.<br>
+@return&nbsp;Tupla&nbsp;de&nbsp;floats&nbsp;representando&nbsp;as&nbsp;posições&nbsp;x&nbsp;e&nbsp;y&nbsp;corrigidas.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="JanelaView-desenhar_preview"><strong>desenhar_preview</strong></a>(self, figura)</dt><dd><span class="code">Comanda&nbsp;o&nbsp;desenho&nbsp;em&nbsp;tempo&nbsp;real&nbsp;da&nbsp;forma&nbsp;atual&nbsp;sendo&nbsp;arrastada.<br>
+&nbsp;<br>
+@param&nbsp;figura:&nbsp;Objeto&nbsp;instanciado&nbsp;herdeiro&nbsp;da&nbsp;classe&nbsp;Figura.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<dl><dt><a name="JanelaView-redesenhar_tudo"><strong>redesenhar_tudo</strong></a>(self, figuras)</dt><dd><span class="code">Limpa&nbsp;a&nbsp;tela&nbsp;e&nbsp;varre&nbsp;a&nbsp;lista&nbsp;renderizando&nbsp;definitivamente&nbsp;todos&nbsp;os&nbsp;itens&nbsp;após&nbsp;load&nbsp;ou&nbsp;soltura&nbsp;de&nbsp;clique.<br>
+&nbsp;<br>
+@param&nbsp;figuras:&nbsp;Lista&nbsp;atualizada&nbsp;de&nbsp;objetos&nbsp;gráficos.<br>
+@return&nbsp;Nenhum.<br>
+@throws&nbsp;Nenhuma&nbsp;exceção.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

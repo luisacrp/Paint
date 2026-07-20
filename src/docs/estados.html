@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.lss_paint.controller.estados</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.lss_paint.html" class="white">lss_paint</a>.<a href="src.lss_paint.controller.html" class="white">controller</a>.estados</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/sayran/Downloads/Paint/src/lss_paint/controller/estados.py">/home/sayran/Downloads/Paint/src/lss_paint/controller/estados.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;contendo&nbsp;a&nbsp;implementação&nbsp;do&nbsp;Padrão&nbsp;State&nbsp;para&nbsp;as&nbsp;ferramentas&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+Responsabilidade:&nbsp;Isolar&nbsp;o&nbsp;comportamento&nbsp;de&nbsp;inicialização&nbsp;e&nbsp;atualização&nbsp;de&nbsp;cada&nbsp;<br>
+ferramenta,&nbsp;eliminando&nbsp;condicionais&nbsp;complexas&nbsp;no&nbsp;controlador.<br>
+&nbsp;<br>
+@author&nbsp;Luísa&nbsp;Costa,&nbsp;Sarah&nbsp;Beatriz&nbsp;e&nbsp;Sayran&nbsp;Felix<br>
+@version&nbsp;1.0<br>
+@since&nbsp;2026-07-19</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="abc.html#ABC">abc.ABC</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoCirculo">EstadoCirculo</a>
+</dt><dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoLinha">EstadoLinha</a>
+</dt><dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoOval">EstadoOval</a>
+</dt><dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoPoligono">EstadoPoligono</a>
+</dt><dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoRetangulo">EstadoRetangulo</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="src.lss_paint.controller.estados.html#EstadoRabisco">EstadoRabisco</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoCirculo">class <strong>EstadoCirculo</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;criação&nbsp;de&nbsp;Círculos&nbsp;perfeitos.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoCirculo">EstadoCirculo</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoCirculo-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>:<br>
+<dl><dt><a name="EstadoCirculo-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoFerramenta">class <strong>EstadoFerramenta</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Classe&nbsp;abstrata&nbsp;(State)&nbsp;que&nbsp;define&nbsp;a&nbsp;interface&nbsp;para&nbsp;os&nbsp;comportamentos&nbsp;do&nbsp;mouse.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoFerramenta-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<dl><dt><a name="EstadoFerramenta-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'atualizar_figura', 'iniciar_figura'})</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoFormaSimples">class <strong>EstadoFormaSimples</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;base&nbsp;que&nbsp;encapsula&nbsp;a&nbsp;lógica&nbsp;de&nbsp;arrasto&nbsp;para&nbsp;formas&nbsp;de&nbsp;2&nbsp;pontos&nbsp;(x2,&nbsp;y2).<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoFormaSimples-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'iniciar_figura'})</dl>
+
+<hr>
+Methods inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><a name="EstadoFormaSimples-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoLinha">class <strong>EstadoLinha</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;criação&nbsp;de&nbsp;Linhas.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoLinha">EstadoLinha</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoLinha-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>:<br>
+<dl><dt><a name="EstadoLinha-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoOval">class <strong>EstadoOval</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;criação&nbsp;de&nbsp;Ovais.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoOval">EstadoOval</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoOval-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>:<br>
+<dl><dt><a name="EstadoOval-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoPoligono">class <strong>EstadoPoligono</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;criação&nbsp;de&nbsp;Polígonos&nbsp;baseados&nbsp;em&nbsp;número&nbsp;de&nbsp;lados.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoPoligono">EstadoPoligono</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoPoligono-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>:<br>
+<dl><dt><a name="EstadoPoligono-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoRabisco">class <strong>EstadoRabisco</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;o&nbsp;comportamento&nbsp;da&nbsp;ferramenta&nbsp;de&nbsp;Rabisco&nbsp;livre.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoRabisco">EstadoRabisco</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoRabisco-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<dl><dt><a name="EstadoRabisco-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoRetangulo">class <strong>EstadoRetangulo</strong></a>(<a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;concreto&nbsp;para&nbsp;criação&nbsp;de&nbsp;Retângulos.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoRetangulo">EstadoRetangulo</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a></dd>
+<dd><a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoRetangulo-iniciar_figura"><strong>iniciar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;clicar&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@param&nbsp;controller:&nbsp;Instância&nbsp;do&nbsp;PaintController.<br>
+@param&nbsp;x:&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;clique.<br>
+@param&nbsp;y:&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;clique.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="src.lss_paint.controller.estados.html#EstadoFormaSimples">EstadoFormaSimples</a>:<br>
+<dl><dt><a name="EstadoRetangulo-atualizar_figura"><strong>atualizar_figura</strong></a>(self, controller, x, y)</dt><dd><span class="code">Define&nbsp;o&nbsp;comportamento&nbsp;ao&nbsp;arrastar&nbsp;o&nbsp;mouse&nbsp;na&nbsp;tela.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="src.lss_paint.controller.estados.html#EstadoFerramenta">EstadoFerramenta</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
